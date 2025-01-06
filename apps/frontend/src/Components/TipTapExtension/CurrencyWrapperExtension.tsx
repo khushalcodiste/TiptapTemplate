@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { CurrencyAmountBaseExtension } from '@ndeck/tiptap-extensions';
-import { HiMiniPencilSquare } from '@react-icons/all-files/hi2/HiMiniPencilSquare';
 import { NodeViewProps } from '@tiptap/core';
 import { NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+
+import { CurrencyAmountBaseExtension } from '@ndeck/tiptap-extensions';
 import { InputNumber, Popover, Select } from 'antd';
 import styled from 'styled-components';
 
@@ -33,8 +33,6 @@ const CURRENCY_OPTIONS: { label: string; value: 'USD' | 'INR' }[] = [
 ];
 
 function ListWithTitleComponent(nodeViewProps: NodeViewProps) {
-  const { isEditable } = nodeViewProps.editor;
-
   const currency = useMemo<'USD' | 'INR'>(
     () => (nodeViewProps.node.attrs?.currency as 'USD' | 'INR') || CURRENCY_OPTIONS.at(0)?.value,
     [nodeViewProps.node.attrs?.currency]
@@ -54,9 +52,7 @@ function ListWithTitleComponent(nodeViewProps: NodeViewProps) {
         trigger={['click', 'hover']}
         content={
           <div>
-            <div style={{ marginBottom: '0.5rem', fontWeight: 500 }}>
-              Edit Budget <HiMiniPencilSquare />
-            </div>
+            <div style={{ marginBottom: '0.5rem', fontWeight: 500 }}>Edit Budget</div>
             <InputNumber
               type="number"
               defaultValue={Number(nodeViewProps.node.attrs?.value || 0)}
@@ -85,7 +81,6 @@ function ListWithTitleComponent(nodeViewProps: NodeViewProps) {
       >
         Budget: {formatCurrency(Number(nodeViewProps.node.attrs?.value || 0), { currency, maximumFractionDigits: 0 })}
         &nbsp;
-        {isEditable && <HiMiniPencilSquare size={22} />}
       </Popover>
     </StyledNodeViewContainer>
   );

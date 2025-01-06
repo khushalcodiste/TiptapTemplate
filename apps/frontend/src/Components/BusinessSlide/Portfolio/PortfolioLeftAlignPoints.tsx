@@ -2,9 +2,7 @@ import { useState } from 'react';
 
 import { NodeViewProps } from '@tiptap/core';
 
-import { IoCloseSharp } from '@react-icons/all-files/io5/IoCloseSharp';
 import { Button } from 'antd';
-import deepmerge from 'deepmerge';
 import styled from 'styled-components';
 
 import { ImageSelector } from '@/Components/ImageSelector/ImageSelector';
@@ -263,7 +261,6 @@ export function PortfolioLeftAlignPointsSlideListWrapper({
   const [parentContentLength, setParentContentLength] = useGetParentContentLength({ nodeViewProps });
   const [isHovered, setIsHovered] = useState(false);
 
-  const { updateAttributes } = nodeViewProps;
   const backgroundImage = nodeViewProps.node.attrs?.backgroundImage as ImageSearchOptions;
   const titleFontSize = calculateDynamicFontSize({
     node: nodeViewProps.node?.child(0),
@@ -295,13 +292,7 @@ export function PortfolioLeftAlignPointsSlideListWrapper({
       {children}
       <div className="item-cover" contentEditable={false}>
         <ImageSelector
-          disabled={!nodeViewProps.editor.isEditable}
           defaultSrc=""
-          updateAttributes={(updatedProps: ImageSearchOptions) => {
-            updateAttributes({
-              backgroundImage: deepmerge(backgroundImage || {}, updatedProps),
-            });
-          }}
           src={getPptImageUrl(backgroundImage?.src) || '/images/slides/profolio-slide-default-image.webp'}
           alt={backgroundImage?.alt || ''}
           renderImage={(props: { src: string; alt: string }) => (
@@ -325,7 +316,7 @@ export function PortfolioLeftAlignPointsSlideListWrapper({
             setParentContentLength(parentContentLength);
             removeNode(nodeViewProps);
           }}
-          icon={<IoCloseSharp />}
+          icon="icon"
           contentEditable={false}
         />
       )}

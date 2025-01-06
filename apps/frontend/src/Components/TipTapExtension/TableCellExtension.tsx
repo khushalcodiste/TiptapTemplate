@@ -1,9 +1,7 @@
-import { TableCellBaseExtension } from '@ndeck/tiptap-extensions';
-import { AiOutlineDelete } from '@react-icons/all-files/ai/AiOutlineDelete';
-import { TbRowInsertBottom } from '@react-icons/all-files/tb/TbRowInsertBottom';
-import { TbRowInsertTop } from '@react-icons/all-files/tb/TbRowInsertTop';
 import { NodeViewProps } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+
+import { TableCellBaseExtension } from '@ndeck/tiptap-extensions';
 import { Button, Popover, Tooltip } from 'antd';
 import styled from 'styled-components';
 
@@ -37,17 +35,13 @@ export default function TableColumnComponent({ editor, getPos }: NodeViewProps) 
         content={
           <StyledToolbar>
             <Tooltip title="Row Below">
-              <Button
-                size="middle"
-                onClick={() => handleAddRow('addRowAfter')}
-                icon={<TbRowInsertBottom size={18} />}
-              />
+              <Button size="middle" onClick={() => handleAddRow('addRowAfter')} icon="icon" />
             </Tooltip>
             <Tooltip title="Row Above">
-              <Button size="middle" onClick={() => handleAddRow('addRowBefore')} icon={<TbRowInsertTop size={18} />} />
+              <Button size="middle" onClick={() => handleAddRow('addRowBefore')} icon="icon" />
             </Tooltip>
             <Tooltip title="Delete Row">
-              <Button size="middle" onClick={() => handleDeleteRow()} icon={<AiOutlineDelete size={18} />} />
+              <Button size="middle" onClick={() => handleDeleteRow()} icon="icon" />
             </Tooltip>
           </StyledToolbar>
         }

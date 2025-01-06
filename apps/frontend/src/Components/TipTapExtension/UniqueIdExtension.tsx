@@ -6,6 +6,7 @@ import {
   findDuplicates,
   getChangedRanges,
 } from '@tiptap/core';
+
 import { Fragment, Slice } from '@tiptap/pm/model';
 import { Plugin, PluginKey } from '@tiptap/pm/state';
 import { Node as PNode } from 'prosemirror-model';

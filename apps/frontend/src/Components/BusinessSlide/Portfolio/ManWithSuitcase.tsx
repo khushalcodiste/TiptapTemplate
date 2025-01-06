@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { NodeViewProps } from '@tiptap/core';
 
-import { IoCloseSharp } from '@react-icons/all-files/io5/IoCloseSharp';
 import { Button } from 'antd';
 import styled from 'styled-components';
 
@@ -341,7 +340,7 @@ export function PortfolioManWithSuitCaseSlideListItem({
   children: React.JSX.Element;
   nodeViewProps: NodeViewProps;
 }) {
-  const { updateAttributes, node } = nodeViewProps;
+  const { node } = nodeViewProps;
   const backgroundImage = node.attrs.backgroundImage as ImageSearchOptions;
   const [parentContentLength, setParentContentLength] = useGetParentContentLength({ nodeViewProps });
   const [isHovered, setIsHovered] = useState(false);
@@ -367,12 +366,7 @@ export function PortfolioManWithSuitCaseSlideListItem({
     >
       <div contentEditable={false} className="item-cover">
         <ImageSelector
-          disabled={!nodeViewProps.editor.isEditable}
           defaultSrc=""
-          updateAttributes={(updatedAttr: ImageSearchOptions) => {
-            updateAttributes({ backgroundImage: { ...(backgroundImage || {}), ...updatedAttr } });
-          }}
-          uploadPath={backgroundImage.uploadKey}
           src={getPptImageUrl(backgroundImage?.src || backgroundImage?.uploadKey)}
           alt={backgroundImage?.alt || ''}
           renderImage={(props: { src: string; alt: string }) => <img alt={props.alt} src={props.src} />}
@@ -389,7 +383,7 @@ export function PortfolioManWithSuitCaseSlideListItem({
             setParentContentLength(parentContentLength);
             removeNode(nodeViewProps);
           }}
-          icon={<IoCloseSharp />}
+          icon="icon"
         />
       )}
     </StyledContentList>

@@ -1,9 +1,7 @@
-import { TableHeaderBaseExtension } from '@ndeck/tiptap-extensions';
-import { TbColumnInsertLeft } from '@react-icons/all-files/tb/TbColumnInsertLeft';
-import { TbColumnInsertRight } from '@react-icons/all-files/tb/TbColumnInsertRight';
-import { TbColumnRemove } from '@react-icons/all-files/tb/TbColumnRemove';
 import { NodeViewProps } from '@tiptap/core';
 import { NodeViewContent, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react';
+
+import { TableHeaderBaseExtension } from '@ndeck/tiptap-extensions';
 import { Button, Popover, Tooltip } from 'antd';
 import styled from 'styled-components';
 
@@ -50,21 +48,13 @@ export default function TableHeaderComponent({ editor }: NodeViewProps) {
         content={
           <StyledToolbar>
             <Tooltip title="Column Before">
-              <Button
-                size="middle"
-                onClick={() => handleAddColumn('addColumnBefore')}
-                icon={<TbColumnInsertLeft size={18} />}
-              />
+              <Button size="middle" onClick={() => handleAddColumn('addColumnBefore')} icon="icon" />
             </Tooltip>
             <Tooltip title="Column After">
-              <Button
-                size="middle"
-                onClick={() => handleAddColumn('addColumnAfter')}
-                icon={<TbColumnInsertRight size={18} />}
-              />
+              <Button size="middle" onClick={() => handleAddColumn('addColumnAfter')} icon="icon" />
             </Tooltip>
             <Tooltip title="Delete Column">
-              <Button size="middle" onClick={() => handleDeleteColumn()} icon={<TbColumnRemove size={18} />} />
+              <Button size="middle" onClick={() => handleDeleteColumn()} icon="icon" />
             </Tooltip>
           </StyledToolbar>
         }
