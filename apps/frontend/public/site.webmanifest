@@ -1,0 +1,39 @@
+{
+  "name": "NDeck.io",
+  "short_name": "NDeck.io",
+  "description":"NDeck helps software Agency, Consultants to close more deals with personalized video proposals, automatic diagrams, and stunning presentations. Start your free trial today!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fe5f26",
+  "theme_color": "#000000",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/images/og-image.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/og-image.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/og-image.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/images/og-image.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "prefer_related_applications": false
+}

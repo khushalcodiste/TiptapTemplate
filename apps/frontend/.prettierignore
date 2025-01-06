@@ -1,0 +1,6 @@
+dist/
+.next/
+.vscode/public/
+public/
+pnpm-lock.yaml
+tmp/

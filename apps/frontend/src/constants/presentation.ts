@@ -1,0 +1,41 @@
+export const PRESENTATION_VIEW_TYPE = {
+  SLIDES: 'slides',
+  DOCUMENT: 'doc',
+} as const;
+
+export const PRESENTATION_VIEW_OPTIONS = [
+  { label: 'Slides', value: PRESENTATION_VIEW_TYPE.SLIDES },
+  { label: 'Document', value: PRESENTATION_VIEW_TYPE.DOCUMENT },
+];
+
+export type PRESENTATION_VIEW_TYPE = (typeof PRESENTATION_VIEW_TYPE)[keyof typeof PRESENTATION_VIEW_TYPE];
+
+export const PRESENTATION_SIDEBAR_VIEW_OPTIONS = {
+  FILMSTRIP: 'FILMSTRIP',
+  TEXT_LIST: 'TEXT_LIST',
+} as const;
+
+export const PRESENTATION_SIDEBAR_VIEW_OPTIONS_LIST = Object.values(PRESENTATION_SIDEBAR_VIEW_OPTIONS);
+
+export type PRESENTATION_SIDEBAR_VIEW_OPTIONS = (typeof PRESENTATION_SIDEBAR_VIEW_OPTIONS_LIST)[number];
+
+export const PRESENTATION_SLIDE_ACTIONS = {
+  ADD: 'ADD',
+  REMOVE: 'REMOVE',
+};
+
+export const PRESENTATION_EXPORT_FORMAT = {
+  PPTX: 'PPTX',
+  PDF: 'PDF',
+} as const;
+
+export type PRESENTATION_EXPORT_FORMAT = keyof typeof PRESENTATION_EXPORT_FORMAT;
+
+export const IMAGES_PROVIDERS = {
+  GOOGLE: 'GOOGLE',
+  FREEPIK: 'FREEPIK',
+  UNSPLASH: 'UNSPLASH',
+  WEB: 'WEB',
+  RANDOM: 'RANDOM',
+  AI: 'AI',
+} as const;
